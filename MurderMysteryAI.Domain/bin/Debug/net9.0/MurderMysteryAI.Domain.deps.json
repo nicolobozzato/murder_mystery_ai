@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "MurderMysteryAI.Domain/1.0.0": {
+        "runtime": {
+          "MurderMysteryAI.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MurderMysteryAI.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

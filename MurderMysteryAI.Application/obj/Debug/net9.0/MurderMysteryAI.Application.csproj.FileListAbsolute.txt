@@ -1,0 +1,15 @@
+C:\Users\nicol\Projects\MurderMysteryAI\MurderMysteryAI.Application\bin\Debug\net9.0\MurderMysteryAI.Application.deps.json
+C:\Users\nicol\Projects\MurderMysteryAI\MurderMysteryAI.Application\bin\Debug\net9.0\MurderMysteryAI.Application.dll
+C:\Users\nicol\Projects\MurderMysteryAI\MurderMysteryAI.Application\bin\Debug\net9.0\MurderMysteryAI.Application.pdb
+C:\Users\nicol\Projects\MurderMysteryAI\MurderMysteryAI.Application\bin\Debug\net9.0\MurderMysteryAI.Domain.dll
+C:\Users\nicol\Projects\MurderMysteryAI\MurderMysteryAI.Application\bin\Debug\net9.0\MurderMysteryAI.Domain.pdb
+C:\Users\nicol\Projects\MurderMysteryAI\MurderMysteryAI.Application\obj\Debug\net9.0\MurderMysteryAI.Application.csproj.AssemblyReference.cache
+C:\Users\nicol\Projects\MurderMysteryAI\MurderMysteryAI.Application\obj\Debug\net9.0\MurderMysteryAI.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nicol\Projects\MurderMysteryAI\MurderMysteryAI.Application\obj\Debug\net9.0\MurderMysteryAI.Application.AssemblyInfoInputs.cache
+C:\Users\nicol\Projects\MurderMysteryAI\MurderMysteryAI.Application\obj\Debug\net9.0\MurderMysteryAI.Application.AssemblyInfo.cs
+C:\Users\nicol\Projects\MurderMysteryAI\MurderMysteryAI.Application\obj\Debug\net9.0\MurderMysteryAI.Application.csproj.CoreCompileInputs.cache
+C:\Users\nicol\Projects\MurderMysteryAI\MurderMysteryAI.Application\obj\Debug\net9.0\MurderMy.1170A7B0.Up2Date
+C:\Users\nicol\Projects\MurderMysteryAI\MurderMysteryAI.Application\obj\Debug\net9.0\MurderMysteryAI.Application.dll
+C:\Users\nicol\Projects\MurderMysteryAI\MurderMysteryAI.Application\obj\Debug\net9.0\refint\MurderMysteryAI.Application.dll
+C:\Users\nicol\Projects\MurderMysteryAI\MurderMysteryAI.Application\obj\Debug\net9.0\MurderMysteryAI.Application.pdb
+C:\Users\nicol\Projects\MurderMysteryAI\MurderMysteryAI.Application\obj\Debug\net9.0\ref\MurderMysteryAI.Application.dll

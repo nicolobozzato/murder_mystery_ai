@@ -1,0 +1,14 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: murder-mystery-ai
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=Your_password123
+      - POSTGRES_DB=MurderMysteryAI
+    ports:
+      - "5433:5432"
+    volumes:
+      - pg-data:/var/lib/postgresql/data
+volumes:
+  pg-data:
