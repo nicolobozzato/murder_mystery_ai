@@ -3,18 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MurderMysteryAI.Domain.Entitities
+namespace MurderMysteryAI.Application.BL
 {
-    public sealed class Evidence
+    public class AddEvidenceRequest
     {
-        public Guid Id { get; set; } = Guid.NewGuid();
         public required Guid CaseId { get; set; }
-        public Case Case { get; set; } = default!;
-
-
         public required string Title { get; set; }
         public required string Text { get; set; }
         public string Source { get; set; } = "manual";
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     }
 }

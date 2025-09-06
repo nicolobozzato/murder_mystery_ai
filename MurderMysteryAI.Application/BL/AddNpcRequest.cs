@@ -3,20 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MurderMysteryAI.Domain.Entitities
+namespace MurderMysteryAI.Application.BL
 {
-    public sealed class Npc
+    public class AddNpcRequest
     {
-        public Guid Id { get; set; } = Guid.NewGuid();
         public required Guid CaseId { get; set; }
-        public Case Case { get; set; } = default!;
-
-
         public required string Name { get; set; }
         public string Persona { get; set; } = string.Empty;
         public string TraitsJson { get; set; } = "{}";
         public string SecretsJson { get; set; } = "{}";
         public string MemoryJson { get; set; } = "{}";
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     }
 }

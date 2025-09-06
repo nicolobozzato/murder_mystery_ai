@@ -11,6 +11,7 @@ namespace MurderMysteryAI.Infrastructure
 {
 public sealed class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(options), IAppDbContext
     {
+    public DbSet<Case> Cases => Set<Case>();
     public DbSet<Npc> Npcs => Set<Npc>();
     public DbSet<Evidence> Evidences => Set<Evidence>();
     public DbSet<CaseFact> CaseFacts => Set<CaseFact>();
