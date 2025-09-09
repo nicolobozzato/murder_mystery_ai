@@ -23,10 +23,41 @@ namespace MurderMysteryAI.Infrastructure.Migrations
             NpgsqlModelBuilderExtensions.HasPostgresExtension(modelBuilder, "pg_trgm");
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+            modelBuilder.Entity("MurderMysteryAI.Domain.Entitities.Case", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime?>("PublishedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Synopsis")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Cases");
+                });
+
             modelBuilder.Entity("MurderMysteryAI.Domain.Entitities.CaseFact", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("CaseId")
                         .HasColumnType("uuid");
 
                     b.Property<double>("Confidence")
@@ -52,6 +83,8 @@ namespace MurderMysteryAI.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CaseId");
+
                     b.HasIndex("Subject", "Predicate");
 
                     b.ToTable("CaseFacts");
@@ -61,6 +94,9 @@ namespace MurderMysteryAI.Infrastructure.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("CaseId")
                         .HasColumnType("uuid");
 
                     b.Property<string>("ContradictionsJson")
@@ -94,6 +130,9 @@ namespace MurderMysteryAI.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
+                    b.Property<Guid>("CaseId")
+                        .HasColumnType("uuid");
+
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
 
@@ -112,6 +151,8 @@ namespace MurderMysteryAI.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CaseId");
+
                     b.HasIndex("Title");
 
                     b.ToTable("Evidences");
@@ -121,6 +162,9 @@ namespace MurderMysteryAI.Infrastructure.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("CaseId")
                         .HasColumnType("uuid");
 
                     b.Property<DateTime>("CreatedAt")
@@ -149,9 +193,53 @@ namespace MurderMysteryAI.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CaseId");
+
                     b.HasIndex("Name");
 
                     b.ToTable("Npcs");
+                });
+
+            modelBuilder.Entity("MurderMysteryAI.Domain.Entitities.CaseFact", b =>
+                {
+                    b.HasOne("MurderMysteryAI.Domain.Entitities.Case", "Case")
+                        .WithMany("Facts")
+                        .HasForeignKey("CaseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Case");
+                });
+
+            modelBuilder.Entity("MurderMysteryAI.Domain.Entitities.Evidence", b =>
+                {
+                    b.HasOne("MurderMysteryAI.Domain.Entitities.Case", "Case")
+                        .WithMany("Evidences")
+                        .HasForeignKey("CaseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Case");
+                });
+
+            modelBuilder.Entity("MurderMysteryAI.Domain.Entitities.Npc", b =>
+                {
+                    b.HasOne("MurderMysteryAI.Domain.Entitities.Case", "Case")
+                        .WithMany("Npcs")
+                        .HasForeignKey("CaseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Case");
+                });
+
+            modelBuilder.Entity("MurderMysteryAI.Domain.Entitities.Case", b =>
+                {
+                    b.Navigation("Evidences");
+
+                    b.Navigation("Facts");
+
+                    b.Navigation("Npcs");
                 });
 #pragma warning restore 612, 618
         }

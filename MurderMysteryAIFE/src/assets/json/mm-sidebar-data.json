@@ -1,0 +1,29 @@
+[
+  {
+    "title": "MAIN",
+    "showAsTab": true,
+    "separateRoute": false,
+    "menu": [
+      {
+        "menuValue": "Dashboard",
+        "hasSubRoute": true,
+        "showSubRoute": true,
+        "route": "/dashboard",
+        "active_link": "dashboard",
+        "icon": "ti-layout-dashboard",
+        "subMenus": [
+          {
+            "menuValue": "Cases Dashboard",
+            "route": "/dashboard/murder-mystery-dashboard",
+            "active_link": "/dashboard/murder-mystery-dashboard"
+          },
+          {
+            "menuValue": "Test Chat",
+            "route": "/dashboard/teacher-dashboard",
+            "active_link": "/dashboard/teacher-dashboard"
+          }
+        ]
+      }
+    ]
+  }
+]

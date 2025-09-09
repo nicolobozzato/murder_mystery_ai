@@ -9,3 +9,4 @@ C:\Users\nicol\Projects\MurderMysteryAI\MurderMysteryAI.Domain\obj\Debug\net9.0\
 C:\Users\nicol\Projects\MurderMysteryAI\MurderMysteryAI.Domain\obj\Debug\net9.0\refint\MurderMysteryAI.Domain.dll
 C:\Users\nicol\Projects\MurderMysteryAI\MurderMysteryAI.Domain\obj\Debug\net9.0\MurderMysteryAI.Domain.pdb
 C:\Users\nicol\Projects\MurderMysteryAI\MurderMysteryAI.Domain\obj\Debug\net9.0\ref\MurderMysteryAI.Domain.dll
+C:\Users\nicol\Projects\MurderMysteryAI\MurderMysteryAI.Domain\obj\Debug\net9.0\MurderMysteryAI.Domain.sourcelink.json

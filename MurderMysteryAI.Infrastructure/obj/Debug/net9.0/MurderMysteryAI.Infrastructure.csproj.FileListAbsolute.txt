@@ -17,3 +17,4 @@ C:\Users\nicol\Projects\MurderMysteryAI\MurderMysteryAI.Infrastructure\obj\Debug
 C:\Users\nicol\Projects\MurderMysteryAI\MurderMysteryAI.Infrastructure\obj\Debug\net9.0\ref\MurderMysteryAI.Infrastructure.dll
 C:\Users\nicol\Projects\MurderMysteryAI\MurderMysteryAI.Infrastructure\bin\Debug\net9.0\MurderMysteryAI.Infrastructure.runtimeconfig.json
 C:\Users\nicol\Projects\MurderMysteryAI\MurderMysteryAI.Infrastructure\obj\Debug\net9.0\MurderMysteryAI.Infrastructure.genruntimeconfig.cache
+C:\Users\nicol\Projects\MurderMysteryAI\MurderMysteryAI.Infrastructure\obj\Debug\net9.0\MurderMysteryAI.Infrastructure.sourcelink.json

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MurderMysteryAI.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4e4c0efc69a1528a488778a12c5f02cfaa2fdcde")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fbc84543ecb9a38d431bd8fde400ad9e8e1c3ce7")]
 [assembly: System.Reflection.AssemblyProductAttribute("MurderMysteryAI.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MurderMysteryAI.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

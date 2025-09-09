@@ -13,3 +13,4 @@ C:\Users\nicol\Projects\MurderMysteryAI\MurderMysteryAI.Application\obj\Debug\ne
 C:\Users\nicol\Projects\MurderMysteryAI\MurderMysteryAI.Application\obj\Debug\net9.0\refint\MurderMysteryAI.Application.dll
 C:\Users\nicol\Projects\MurderMysteryAI\MurderMysteryAI.Application\obj\Debug\net9.0\MurderMysteryAI.Application.pdb
 C:\Users\nicol\Projects\MurderMysteryAI\MurderMysteryAI.Application\obj\Debug\net9.0\ref\MurderMysteryAI.Application.dll
+C:\Users\nicol\Projects\MurderMysteryAI\MurderMysteryAI.Application\obj\Debug\net9.0\MurderMysteryAI.Application.sourcelink.json

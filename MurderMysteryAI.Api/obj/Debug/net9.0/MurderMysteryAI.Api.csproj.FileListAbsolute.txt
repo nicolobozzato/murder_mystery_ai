@@ -146,3 +146,4 @@ C:\Users\nicol\Projects\MurderMysteryAI\MurderMysteryAI.Api\bin\Debug\net9.0\Ser
 C:\Users\nicol\Projects\MurderMysteryAI\MurderMysteryAI.Api\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\nicol\Projects\MurderMysteryAI\MurderMysteryAI.Api\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\nicol\Projects\MurderMysteryAI\MurderMysteryAI.Api\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\nicol\Projects\MurderMysteryAI\MurderMysteryAI.Api\obj\Debug\net9.0\MurderMysteryAI.Api.sourcelink.json
