@@ -27,6 +27,11 @@ export class CaseRepositoryService extends BaseRepositoryService {
     return response.data;
   }
 
+  public async getAllCases() {
+    const response = await this.api.apiAdminCasesGet();
+    return response.data;
+  }
+
   public async createCase(createCaseRequest?: CreateCaseRequest) {
     const response = await this.api.apiAdminCasesPost(createCaseRequest);
     return response.data;

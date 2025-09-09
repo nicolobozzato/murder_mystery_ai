@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MurderMysteryAI.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fbc84543ecb9a38d431bd8fde400ad9e8e1c3ce7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+82dcd86b3cf177c301cd19562f566cf9153d01ed")]
 [assembly: System.Reflection.AssemblyProductAttribute("MurderMysteryAI.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MurderMysteryAI.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -23,6 +23,17 @@ namespace MurderMysteryAI.Api.Controllers
             return CreatedAtAction(nameof(GetCase), new { caseId = caseInstance.Id }, caseInstance);
         }
 
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Case>>> GetAllCases(CancellationToken ct)
+        {
+            var cases = await db.Cases
+            .Include(c => c.Npcs)
+            .Include(c => c.Evidences)
+            .Include(c => c.Facts)
+            .ToListAsync(ct);
+            return Ok(cases);
+        }
+
 
         [HttpGet("{caseId:guid}")]
         public async Task<ActionResult<Case>> GetCase([FromRoute] Guid caseId, CancellationToken ct)

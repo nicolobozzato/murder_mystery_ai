@@ -440,6 +440,35 @@ export const AdminCasesApiAxiosParamCreator = function (configuration?: Configur
         },
         /**
          * 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiAdminCasesGet: async (options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/api/admin/cases`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
          * @param {CreateCaseRequest} [createCaseRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -507,6 +536,17 @@ export const AdminCasesApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async apiAdminCasesGet(options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Case>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.apiAdminCasesGet(options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['AdminCasesApi.apiAdminCasesGet']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
          * @param {CreateCaseRequest} [createCaseRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -547,6 +587,14 @@ export const AdminCasesApiFactory = function (configuration?: Configuration, bas
         },
         /**
          * 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiAdminCasesGet(options?: any): AxiosPromise<Array<Case>> {
+            return localVarFp.apiAdminCasesGet(options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @param {CreateCaseRequest} [createCaseRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -584,6 +632,16 @@ export class AdminCasesApi extends BaseAPI {
      */
     public apiAdminCasesCaseIdPublishPost(caseId: string, options?: RawAxiosRequestConfig) {
         return AdminCasesApiFp(this.configuration).apiAdminCasesCaseIdPublishPost(caseId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof AdminCasesApi
+     */
+    public apiAdminCasesGet(options?: RawAxiosRequestConfig) {
+        return AdminCasesApiFp(this.configuration).apiAdminCasesGet(options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
