@@ -3,6 +3,9 @@ import { onMounted, ref } from "vue";
 import CaseModal from "@/features/CasesDashboard/components/case-modal.vue";
 import type { Case } from "@/api/generated";
 import { CaseRepositoryService } from "@/Core/repositories/case-repository-service";
+import { useRoute, useRouter } from "vue-router";
+
+const router = useRouter();
 
 const cases = ref<Case[]>([]);
 
@@ -10,6 +13,14 @@ onMounted(async () => {
   const response = await CaseRepositoryService.Instance.getAllCases();
   cases.value = response;
 });
+
+function onCaseClick(item: Case) {
+  router.push({
+    name: "case-detail",
+    params: { id: item.id },
+    query: { myObj: JSON.stringify(item) },
+  });
+}
 </script>
 
 <template>
@@ -56,7 +67,7 @@ onMounted(async () => {
     </div>
     <div>
       <div class="col-xl-4" v-for="item in cases" :key="item.id">
-        <div class="card">
+        <div class="card" @click="onCaseClick(item)" style="cursor: pointer">
           <img src="@/assets/img/img-01.jpg" class="card-img-top" alt="..." />
           <div class="card-body">
             <h6 class="card-title fw-semibold">

@@ -7,6 +7,12 @@ const routes = [
     component: () =>
       import("@/features/CasesDashboard/views/cases-dashboard.vue"),
   },
+  {
+    path: "/cases/:id",
+    name: "case-detail",
+    component: () =>
+      import("@/features/CaseEdit/views/case-edit-dashboard.vue"),
+  },
 ];
 export const router = createRouter({
   history: createWebHistory("/"),
