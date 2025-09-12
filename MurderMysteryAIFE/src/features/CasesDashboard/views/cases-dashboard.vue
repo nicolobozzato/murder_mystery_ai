@@ -1,24 +1,23 @@
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
 import CaseModal from "@/features/CasesDashboard/components/case-modal.vue";
-import type { Case } from "@/api/generated";
+import type { CasesLightInfoDTO } from "@/api/generated";
 import { CaseRepositoryService } from "@/Core/repositories/case-repository-service";
 import { useRoute, useRouter } from "vue-router";
 
 const router = useRouter();
 
-const cases = ref<Case[]>([]);
+const cases = ref<CasesLightInfoDTO[]>([]);
 
 onMounted(async () => {
   const response = await CaseRepositoryService.Instance.getAllCases();
   cases.value = response;
 });
 
-function onCaseClick(item: Case) {
+function onCaseClick(item: CasesLightInfoDTO) {
   router.push({
     name: "case-detail",
     params: { id: item.id },
-    query: { myObj: JSON.stringify(item) },
   });
 }
 </script>

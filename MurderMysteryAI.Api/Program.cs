@@ -46,6 +46,8 @@ builder.Services.AddDbContext<AppDbContext>((sp, options) =>
     options.UseNpgsql(cs ?? throw new ArgumentNullException("configuration"), sql => sql.MigrationsAssembly(typeof(AppDbContext).Assembly.FullName));
 });
 
+builder.Services.AddAutoMapper(typeof(Program));
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

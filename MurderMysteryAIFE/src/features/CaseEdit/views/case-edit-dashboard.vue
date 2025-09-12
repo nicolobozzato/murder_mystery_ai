@@ -1,18 +1,20 @@
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
-import type { Case } from "@/api/generated";
 import { CaseRepositoryService } from "@/Core/repositories/case-repository-service";
 import { useRoute } from "vue-router";
 import EvidenceModal from "../components/evidence-modal.vue";
 import NpcModal from "../components/npc-modal.vue";
-import { storeToRefs } from "pinia";
 import { useCaseEditStore } from "../case-edit-store";
+import type { CaseAdminDTO } from "@/api/generated";
 const route = useRoute();
 
-const caseFromRoute = route.query.myObj
-  ? JSON.parse(route.query.myObj as string)
-  : null;
-const caseToEdit = ref<Case>(caseFromRoute);
+const caseToEdit = ref<CaseAdminDTO | undefined>();
+
+onMounted(async () => {
+  caseToEdit.value = await CaseRepositoryService.Instance.getCaseById(
+    route.params.id as string
+  );
+});
 
 const store = useCaseEditStore();
 </script>
@@ -23,7 +25,7 @@ const store = useCaseEditStore();
   <layout-sidebar></layout-sidebar>
 
   <!-- Page Wrapper -->
-  <div class="page-wrapper">
+  <div class="page-wrapper" v-if="caseToEdit">
     <div class="content">
       <!-- Page Header -->
       <div
@@ -68,16 +70,31 @@ const store = useCaseEditStore();
         <div class="col-xl-8">
           <h2 class="mb-2">NPC</h2>
           <span
-            v-for="i in 5"
-            :key="i"
+            v-for="npc in caseToEdit.npcs"
+            :key="npc.id"
             class="avatar avatar-xxl me-2 avatar-rounded ms-1"
+            data-bs-toggle="modal"
+            data-bs-target="#add_npc"
+            @click="() => (store.npcToEdit = npc)"
           >
-            <img src="@/assets/img/profiles/avatar-03.jpg" alt="img" />
+            <img
+              src="@/assets/img/profiles/avatar-03.jpg"
+              alt="img"
+              data-bs-toggle="tooltip"
+              data-bs-placement="top"
+              title="NPC avatar"
+            />
           </span>
-          <span class="avatar avatar-xxl me-2 avatar-rounded ms-1">
-            <div class="bg-grey">
-              <i class="fas fa-plus"></i>
-            </div>
+          <span
+            class="avatar avatar-xxl me-2 avatar-rounded ms-1 border border-blue-2 d-flex align-items-center justify-content-center"
+            style="background-color: #f0f4ff"
+            href="javascript:void(0);"
+            data-bs-toggle="modal"
+            data-bs-target="#add_npc"
+            title="Add NPC"
+            @click="() => (store.npcToEdit = undefined)"
+          >
+            <i class="fas fa-plus fs-24 text-blue"></i>
           </span>
         </div>
       </div>
@@ -93,23 +110,31 @@ const store = useCaseEditStore();
         <div class="col-xl-8">
           <h2 class="mb-2">Evidence</h2>
           <span
-            v-for="i in 5"
-            :key="i"
+            v-for="evidence in caseToEdit.evidences"
+            :key="evidence.id"
             class="avatar avatar-xxxl ms-1 me-2"
             href="javascript:void(0);"
             data-bs-toggle="modal"
-            data-bs-target="#add_case"
+            data-bs-target="#add_evidence"
+            @click="() => (store.evidenceToEdit = evidence)"
           >
             <img src="@/assets/img/profiles/avatar-02.jpg" alt="img" />
+          </span>
+          <span
+            class="avatar avatar-xxxl ms-1 me-2 border border-blue-2 d-flex align-items-center justify-content-center"
+            style="background-color: #f0f4ff"
+            href="javascript:void(0);"
+            data-bs-toggle="modal"
+            data-bs-target="#add_evidence"
+            @click="() => (store.evidenceToEdit = undefined)"
+          >
+            <i class="fas fa-plus fs-32 text-blue"></i>
           </span>
         </div>
       </div>
     </div>
   </div>
   <!-- /Page Wrapper -->
-  <EvidenceModal
-    id="add_evidence"
-    :evidence="store.evidenceToEdit"
-  ></EvidenceModal>
-  <NpcModal :caseToEdit="caseToEdit"></NpcModal>
+  <EvidenceModal :evidence="store.evidenceToEdit"></EvidenceModal>
+  <NpcModal :npc="store.npcToEdit"></NpcModal>
 </template>

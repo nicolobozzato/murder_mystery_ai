@@ -34,12 +34,6 @@ export interface AddEvidenceRequest {
      * @type {string}
      * @memberof AddEvidenceRequest
      */
-    'caseId': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof AddEvidenceRequest
-     */
     'title': string | null;
     /**
      * 
@@ -65,12 +59,6 @@ export interface AddNpcRequest {
      * @type {string}
      * @memberof AddNpcRequest
      */
-    'caseId': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof AddNpcRequest
-     */
     'name': string | null;
     /**
      * 
@@ -100,142 +88,132 @@ export interface AddNpcRequest {
 /**
  * 
  * @export
- * @interface Case
+ * @interface CaseAdminDTO
  */
-export interface Case {
+export interface CaseAdminDTO {
     /**
      * 
      * @type {string}
-     * @memberof Case
+     * @memberof CaseAdminDTO
      */
     'id'?: string;
     /**
      * 
      * @type {string}
-     * @memberof Case
+     * @memberof CaseAdminDTO
      */
-    'title': string | null;
+    'title'?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof Case
+     * @memberof CaseAdminDTO
      */
     'synopsis'?: string | null;
     /**
      * 
-     * @type {CaseStatus}
-     * @memberof Case
+     * @type {string}
+     * @memberof CaseAdminDTO
      */
-    'status'?: CaseStatus;
+    'status'?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof Case
+     * @memberof CaseAdminDTO
      */
     'createdAt'?: string;
     /**
      * 
      * @type {string}
-     * @memberof Case
+     * @memberof CaseAdminDTO
      */
     'publishedAt'?: string | null;
     /**
      * 
-     * @type {Array<Npc>}
-     * @memberof Case
+     * @type {Array<NpcAdminDto>}
+     * @memberof CaseAdminDTO
      */
-    'npcs'?: Array<Npc> | null;
+    'npcs'?: Array<NpcAdminDto> | null;
     /**
      * 
-     * @type {Array<Evidence>}
-     * @memberof Case
+     * @type {Array<EvidenceAdminDto>}
+     * @memberof CaseAdminDTO
      */
-    'evidences'?: Array<Evidence> | null;
+    'evidences'?: Array<EvidenceAdminDto> | null;
     /**
      * 
-     * @type {Array<CaseFact>}
-     * @memberof Case
+     * @type {Array<CaseFactAdminDto>}
+     * @memberof CaseAdminDTO
      */
-    'facts'?: Array<CaseFact> | null;
+    'facts'?: Array<CaseFactAdminDto> | null;
 }
-
-
 /**
  * 
  * @export
- * @interface CaseFact
+ * @interface CaseFactAdminDto
  */
-export interface CaseFact {
+export interface CaseFactAdminDto {
     /**
      * 
      * @type {string}
-     * @memberof CaseFact
+     * @memberof CaseFactAdminDto
      */
     'id'?: string;
     /**
      * 
      * @type {string}
-     * @memberof CaseFact
+     * @memberof CaseFactAdminDto
      */
-    'caseId': string;
-    /**
-     * 
-     * @type {Case}
-     * @memberof CaseFact
-     */
-    'case'?: Case;
+    'subject'?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof CaseFact
+     * @memberof CaseFactAdminDto
      */
-    'subject': string | null;
+    'predicate'?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof CaseFact
-     */
-    'predicate': string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof CaseFact
+     * @memberof CaseFactAdminDto
      */
     'object'?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof CaseFact
+     * @memberof CaseFactAdminDto
      */
     'time'?: string | null;
     /**
      * 
-     * @type {string}
-     * @memberof CaseFact
-     */
-    'source'?: string | null;
-    /**
-     * 
      * @type {number}
-     * @memberof CaseFact
+     * @memberof CaseFactAdminDto
      */
     'confidence'?: number;
 }
 /**
  * 
  * @export
- * @enum {string}
+ * @interface CasesLightInfoDTO
  */
-
-export const CaseStatus = {
-    NUMBER_0: 0,
-    NUMBER_1: 1,
-    NUMBER_2: 2
-} as const;
-
-export type CaseStatus = typeof CaseStatus[keyof typeof CaseStatus];
-
-
+export interface CasesLightInfoDTO {
+    /**
+     * 
+     * @type {string}
+     * @memberof CasesLightInfoDTO
+     */
+    'id': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CasesLightInfoDTO
+     */
+    'title'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof CasesLightInfoDTO
+     */
+    'synopsis'?: string | null;
+}
 /**
  * 
  * @export
@@ -258,112 +236,76 @@ export interface CreateCaseRequest {
 /**
  * 
  * @export
- * @interface Evidence
+ * @interface EvidenceAdminDto
  */
-export interface Evidence {
+export interface EvidenceAdminDto {
     /**
      * 
      * @type {string}
-     * @memberof Evidence
+     * @memberof EvidenceAdminDto
      */
     'id'?: string;
     /**
      * 
      * @type {string}
-     * @memberof Evidence
+     * @memberof EvidenceAdminDto
      */
-    'caseId': string;
-    /**
-     * 
-     * @type {Case}
-     * @memberof Evidence
-     */
-    'case'?: Case;
+    'title'?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof Evidence
+     * @memberof EvidenceAdminDto
      */
-    'title': string | null;
+    'text'?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof Evidence
-     */
-    'text': string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof Evidence
+     * @memberof EvidenceAdminDto
      */
     'source'?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof Evidence
+     * @memberof EvidenceAdminDto
      */
     'createdAt'?: string;
 }
 /**
  * 
  * @export
- * @interface Npc
+ * @interface NpcAdminDto
  */
-export interface Npc {
+export interface NpcAdminDto {
     /**
      * 
      * @type {string}
-     * @memberof Npc
+     * @memberof NpcAdminDto
      */
     'id'?: string;
     /**
      * 
      * @type {string}
-     * @memberof Npc
+     * @memberof NpcAdminDto
      */
-    'caseId': string;
-    /**
-     * 
-     * @type {Case}
-     * @memberof Npc
-     */
-    'case'?: Case;
+    'name'?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof Npc
-     */
-    'name': string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof Npc
+     * @memberof NpcAdminDto
      */
     'persona'?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof Npc
+     * @memberof NpcAdminDto
      */
     'traitsJson'?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof Npc
+     * @memberof NpcAdminDto
      */
     'secretsJson'?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof Npc
-     */
-    'memoryJson'?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof Npc
-     */
-    'createdAt'?: string;
 }
 
 /**
@@ -516,7 +458,7 @@ export const AdminCasesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async apiAdminCasesCaseIdGet(caseId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Case>> {
+        async apiAdminCasesCaseIdGet(caseId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CaseAdminDTO>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.apiAdminCasesCaseIdGet(caseId, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['AdminCasesApi.apiAdminCasesCaseIdGet']?.[localVarOperationServerIndex]?.url;
@@ -539,7 +481,7 @@ export const AdminCasesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async apiAdminCasesGet(options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Case>>> {
+        async apiAdminCasesGet(options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<CasesLightInfoDTO>>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.apiAdminCasesGet(options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['AdminCasesApi.apiAdminCasesGet']?.[localVarOperationServerIndex]?.url;
@@ -551,7 +493,7 @@ export const AdminCasesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async apiAdminCasesPost(createCaseRequest?: CreateCaseRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Case>> {
+        async apiAdminCasesPost(createCaseRequest?: CreateCaseRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CaseAdminDTO>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.apiAdminCasesPost(createCaseRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['AdminCasesApi.apiAdminCasesPost']?.[localVarOperationServerIndex]?.url;
@@ -573,7 +515,7 @@ export const AdminCasesApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiAdminCasesCaseIdGet(caseId: string, options?: any): AxiosPromise<Case> {
+        apiAdminCasesCaseIdGet(caseId: string, options?: any): AxiosPromise<CaseAdminDTO> {
             return localVarFp.apiAdminCasesCaseIdGet(caseId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -590,7 +532,7 @@ export const AdminCasesApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiAdminCasesGet(options?: any): AxiosPromise<Array<Case>> {
+        apiAdminCasesGet(options?: any): AxiosPromise<Array<CasesLightInfoDTO>> {
             return localVarFp.apiAdminCasesGet(options).then((request) => request(axios, basePath));
         },
         /**
@@ -599,7 +541,7 @@ export const AdminCasesApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiAdminCasesPost(createCaseRequest?: CreateCaseRequest, options?: any): AxiosPromise<Case> {
+        apiAdminCasesPost(createCaseRequest?: CreateCaseRequest, options?: any): AxiosPromise<CaseAdminDTO> {
             return localVarFp.apiAdminCasesPost(createCaseRequest, options).then((request) => request(axios, basePath));
         },
     };
@@ -667,6 +609,39 @@ export const AdminEvidencesApiAxiosParamCreator = function (configuration?: Conf
         /**
          * 
          * @param {string} caseId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiAdminCasesCaseIdEvidencesGet: async (caseId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'caseId' is not null or undefined
+            assertParamExists('apiAdminCasesCaseIdEvidencesGet', 'caseId', caseId)
+            const localVarPath = `/api/admin/cases/{caseId}/evidences`
+                .replace(`{${"caseId"}}`, encodeURIComponent(String(caseId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {string} caseId 
          * @param {AddEvidenceRequest} [addEvidenceRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -714,11 +689,23 @@ export const AdminEvidencesApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @param {string} caseId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async apiAdminCasesCaseIdEvidencesGet(caseId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<EvidenceAdminDto>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.apiAdminCasesCaseIdEvidencesGet(caseId, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['AdminEvidencesApi.apiAdminCasesCaseIdEvidencesGet']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @param {string} caseId 
          * @param {AddEvidenceRequest} [addEvidenceRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async apiAdminCasesCaseIdEvidencesPost(caseId: string, addEvidenceRequest?: AddEvidenceRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Evidence>> {
+        async apiAdminCasesCaseIdEvidencesPost(caseId: string, addEvidenceRequest?: AddEvidenceRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EvidenceAdminDto>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.apiAdminCasesCaseIdEvidencesPost(caseId, addEvidenceRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['AdminEvidencesApi.apiAdminCasesCaseIdEvidencesPost']?.[localVarOperationServerIndex]?.url;
@@ -737,11 +724,20 @@ export const AdminEvidencesApiFactory = function (configuration?: Configuration,
         /**
          * 
          * @param {string} caseId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiAdminCasesCaseIdEvidencesGet(caseId: string, options?: any): AxiosPromise<Array<EvidenceAdminDto>> {
+            return localVarFp.apiAdminCasesCaseIdEvidencesGet(caseId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {string} caseId 
          * @param {AddEvidenceRequest} [addEvidenceRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiAdminCasesCaseIdEvidencesPost(caseId: string, addEvidenceRequest?: AddEvidenceRequest, options?: any): AxiosPromise<Evidence> {
+        apiAdminCasesCaseIdEvidencesPost(caseId: string, addEvidenceRequest?: AddEvidenceRequest, options?: any): AxiosPromise<EvidenceAdminDto> {
             return localVarFp.apiAdminCasesCaseIdEvidencesPost(caseId, addEvidenceRequest, options).then((request) => request(axios, basePath));
         },
     };
@@ -754,6 +750,17 @@ export const AdminEvidencesApiFactory = function (configuration?: Configuration,
  * @extends {BaseAPI}
  */
 export class AdminEvidencesApi extends BaseAPI {
+    /**
+     * 
+     * @param {string} caseId 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof AdminEvidencesApi
+     */
+    public apiAdminCasesCaseIdEvidencesGet(caseId: string, options?: RawAxiosRequestConfig) {
+        return AdminEvidencesApiFp(this.configuration).apiAdminCasesCaseIdEvidencesGet(caseId, options).then((request) => request(this.axios, this.basePath));
+    }
+
     /**
      * 
      * @param {string} caseId 
@@ -775,6 +782,39 @@ export class AdminEvidencesApi extends BaseAPI {
  */
 export const AdminNpcsApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
+        /**
+         * 
+         * @param {string} caseId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiAdminCasesCaseIdNpcsGet: async (caseId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'caseId' is not null or undefined
+            assertParamExists('apiAdminCasesCaseIdNpcsGet', 'caseId', caseId)
+            const localVarPath = `/api/admin/cases/{caseId}/npcs`
+                .replace(`{${"caseId"}}`, encodeURIComponent(String(caseId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
         /**
          * 
          * @param {string} caseId 
@@ -825,11 +865,23 @@ export const AdminNpcsApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @param {string} caseId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async apiAdminCasesCaseIdNpcsGet(caseId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<NpcAdminDto>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.apiAdminCasesCaseIdNpcsGet(caseId, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['AdminNpcsApi.apiAdminCasesCaseIdNpcsGet']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @param {string} caseId 
          * @param {AddNpcRequest} [addNpcRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async apiAdminCasesCaseIdNpcsPost(caseId: string, addNpcRequest?: AddNpcRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Npc>> {
+        async apiAdminCasesCaseIdNpcsPost(caseId: string, addNpcRequest?: AddNpcRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<NpcAdminDto>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.apiAdminCasesCaseIdNpcsPost(caseId, addNpcRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['AdminNpcsApi.apiAdminCasesCaseIdNpcsPost']?.[localVarOperationServerIndex]?.url;
@@ -848,11 +900,20 @@ export const AdminNpcsApiFactory = function (configuration?: Configuration, base
         /**
          * 
          * @param {string} caseId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiAdminCasesCaseIdNpcsGet(caseId: string, options?: any): AxiosPromise<Array<NpcAdminDto>> {
+            return localVarFp.apiAdminCasesCaseIdNpcsGet(caseId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {string} caseId 
          * @param {AddNpcRequest} [addNpcRequest] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiAdminCasesCaseIdNpcsPost(caseId: string, addNpcRequest?: AddNpcRequest, options?: any): AxiosPromise<Npc> {
+        apiAdminCasesCaseIdNpcsPost(caseId: string, addNpcRequest?: AddNpcRequest, options?: any): AxiosPromise<NpcAdminDto> {
             return localVarFp.apiAdminCasesCaseIdNpcsPost(caseId, addNpcRequest, options).then((request) => request(axios, basePath));
         },
     };
@@ -865,6 +926,17 @@ export const AdminNpcsApiFactory = function (configuration?: Configuration, base
  * @extends {BaseAPI}
  */
 export class AdminNpcsApi extends BaseAPI {
+    /**
+     * 
+     * @param {string} caseId 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof AdminNpcsApi
+     */
+    public apiAdminCasesCaseIdNpcsGet(caseId: string, options?: RawAxiosRequestConfig) {
+        return AdminNpcsApiFp(this.configuration).apiAdminCasesCaseIdNpcsGet(caseId, options).then((request) => request(this.axios, this.basePath));
+    }
+
     /**
      * 
      * @param {string} caseId 

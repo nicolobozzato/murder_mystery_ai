@@ -7,7 +7,6 @@ namespace MurderMysteryAI.Application.BL
 {
     public class AddNpcRequest
     {
-        public required Guid CaseId { get; set; }
         public required string Name { get; set; }
         public string Persona { get; set; } = string.Empty;
         public string TraitsJson { get; set; } = "{}";

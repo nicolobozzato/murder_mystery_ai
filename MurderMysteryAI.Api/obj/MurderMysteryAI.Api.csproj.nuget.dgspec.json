@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nicol\\Projects\\MurderMysteryAI\\MurderMysteryAI.Api\\MurderMysteryAI.Api.csproj": {}
+    "C:\\Users\\nicol\\Projects\\MurderMysteryAI\\MurderMysteryAI.APi\\MurderMysteryAI.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nicol\\Projects\\MurderMysteryAI\\MurderMysteryAI.Api\\MurderMysteryAI.Api.csproj": {
+    "C:\\Users\\nicol\\Projects\\MurderMysteryAI\\MurderMysteryAI.APi\\MurderMysteryAI.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nicol\\Projects\\MurderMysteryAI\\MurderMysteryAI.Api\\MurderMysteryAI.Api.csproj",
+        "projectUniqueName": "C:\\Users\\nicol\\Projects\\MurderMysteryAI\\MurderMysteryAI.APi\\MurderMysteryAI.Api.csproj",
         "projectName": "MurderMysteryAI.Api",
-        "projectPath": "C:\\Users\\nicol\\Projects\\MurderMysteryAI\\MurderMysteryAI.Api\\MurderMysteryAI.Api.csproj",
+        "projectPath": "C:\\Users\\nicol\\Projects\\MurderMysteryAI\\MurderMysteryAI.APi\\MurderMysteryAI.Api.csproj",
         "packagesPath": "C:\\Users\\nicol\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nicol\\Projects\\MurderMysteryAI\\MurderMysteryAI.Api\\obj\\",
+        "outputPath": "C:\\Users\\nicol\\Projects\\MurderMysteryAI\\MurderMysteryAI.APi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -58,6 +58,10 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[9.0.5, )"

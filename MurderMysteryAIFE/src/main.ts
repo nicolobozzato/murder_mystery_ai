@@ -10,7 +10,9 @@ import FlagIcon from "vue-flag-icon";
 import DatePicker from "vue3-datepicker";
 import StarRating from "vue3-star-ratings";
 import VueEasyLightbox from "vue-easy-lightbox";
+import { createPinia } from "pinia";
 
+const pinia = createPinia();
 /*************Layout *****************/
 import Layout_Header from "@/CoreDesign/layouts/layout-header.vue";
 import Layout_Sidebar from "@/CoreDesign/layouts/layout-sidebar.vue";
@@ -54,6 +56,7 @@ app.component("breadcrumb-index", Breadcrumb_Index);
 
 app.use(Antd).use(VueEasyLightbox);
 app.use(FlagIcon);
+app.use(pinia);
 app.component("vue3-select", Vue3Select);
 app.component("star-rating", StarRating);
 app.component("date-picker", DatePicker);

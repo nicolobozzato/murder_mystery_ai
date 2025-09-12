@@ -147,3 +147,5 @@ C:\Users\nicol\Projects\MurderMysteryAI\MurderMysteryAI.Api\bin\Debug\net9.0\Swa
 C:\Users\nicol\Projects\MurderMysteryAI\MurderMysteryAI.Api\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\nicol\Projects\MurderMysteryAI\MurderMysteryAI.Api\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\nicol\Projects\MurderMysteryAI\MurderMysteryAI.Api\obj\Debug\net9.0\MurderMysteryAI.Api.sourcelink.json
+C:\Users\nicol\Projects\MurderMysteryAI\MurderMysteryAI.APi\bin\Debug\net9.0\AutoMapper.dll
+C:\Users\nicol\Projects\MurderMysteryAI\MurderMysteryAI.APi\bin\Debug\net9.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
